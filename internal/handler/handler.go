@@ -10,6 +10,7 @@ import (
 
 func initHandler() *gin.Engine {
 	router := gin.Default()
+	router.POST("/calculate", CalculateInstallment)
 	return router
 }
 
