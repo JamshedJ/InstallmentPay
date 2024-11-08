@@ -4,6 +4,12 @@ import (
 	"regexp"
 )
 
+var (
+	Smartphone = "Smartphone"
+	Computer   = "Computer"
+	TV         = "TV"
+)
+
 type ProductCategory struct {
 	Name      string
 	MinMonths int
@@ -12,9 +18,9 @@ type ProductCategory struct {
 }
 
 var ProductCategories = map[string]ProductCategory{
-	"Smartphone": {Name: "Smartphone", MinMonths: 3, MaxMonths: 9},
-	"Computer":   {Name: "Computer", MinMonths: 3, MaxMonths: 12},
-	"TV":         {Name: "TV", MinMonths: 3, MaxMonths: 18},
+	Smartphone: {Name: Smartphone, MinMonths: 3, MaxMonths: 9},
+	Computer:   {Name: Computer, MinMonths: 3, MaxMonths: 12},
+	TV:         {Name: TV, MinMonths: 3, MaxMonths: 18},
 }
 
 type PaymentParams struct {
@@ -66,20 +72,20 @@ type PaymentPlan struct {
 }
 
 var productPlans = map[string][]PaymentPlan{
-	"Smartphone": {
-		{Months: 9, Percentage: 0.00}, 
-		{Months: 12, Percentage: 0.03}, 
-		{Months: 18, Percentage: 0.06}, 
+	Smartphone: {
+		{Months: 9, Percentage: 0.00},
+		{Months: 12, Percentage: 0.03},
+		{Months: 18, Percentage: 0.06},
 		{Months: 24, Percentage: 0.09},
 	},
-	"Computer": {
-		{Months: 12, Percentage: 0.00}, 
-		{Months: 18, Percentage: 0.04}, 
-		{Months: 24, Percentage: 0.08}, 
+	Computer: {
+		{Months: 12, Percentage: 0.00},
+		{Months: 18, Percentage: 0.04},
+		{Months: 24, Percentage: 0.08},
 	},
-	"TV": {
-		{Months: 18, Percentage: 0.00}, 
-		{Months: 24, Percentage: 0.05}, 
+	TV: {
+		{Months: 18, Percentage: 0.00},
+		{Months: 24, Percentage: 0.05},
 	},
 }
 
